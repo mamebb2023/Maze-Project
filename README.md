@@ -3,7 +3,7 @@
 
 <p>To Compile:<br>
   1 - Git clone this repo<br>
-  2 - Download the SDL2 MinGW Version from here<br>
+  2 - Download the SDL2 MinGW Version from [here](https://wiki.libsdl.org/SDL2/Installation)<br>
   3 - Copy the 'i686-w64-mingw32' files to a known place<br>
   4 - Open a terminal on the cloned folder then edit the makefile<br>
       . Edit the lib location<br>

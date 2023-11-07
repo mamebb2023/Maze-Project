@@ -1,9 +1,10 @@
-<img align="center" src="https://i.ibb.co/7jxfdN3/Screenshot-128.png" alt="Screenshot-128" border="0">
+<img align="center" src="https://i.ibb.co/7jxfdN3/Screenshot-128.png">
 
-# Maze Project
+<h1 align="center">Maze Project</h1>
+<p>A Maze game made by SDL2</p>
 ---
 
-Usage:\n
+Usage:<br>
 1 - Git clone this repo<br>
 
 ```bash

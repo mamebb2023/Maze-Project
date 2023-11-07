@@ -1,7 +1,7 @@
 <img align="center" src="https://i.ibb.co/7jxfdN3/Screenshot-128.png">
 
 <h1 align="center">Maze Project</h1>
-<p>A Maze game made by SDL2</p>
+<p align="center">A Maze game made by SDL2</p>
 ---
 
 Usage:<br>

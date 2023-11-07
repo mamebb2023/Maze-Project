@@ -1,4 +1,4 @@
-<img align="center" src="https://i.ibb.co/VJ01cpF/Screenshot-128.png">
+<img align="center" src="https://gcdnb.pbrd.co/images/s3qZoRkSTsS9.png?o=1">
 
 <h1 align="center">Maze Project</h1>
 <p align="center">A Maze game made by SDL2</p>

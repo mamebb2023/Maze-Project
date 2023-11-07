@@ -2,9 +2,10 @@
 
 <h1 align="center">Maze Project</h1>
 <p align="center">A Maze game made by SDL2</p>
+
 ---
 
-Usage:<br>
+<strong>Usage:</strong><br>
 1 - Git clone this repo<br>
 
 ```bash

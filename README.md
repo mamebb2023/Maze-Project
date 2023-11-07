@@ -11,6 +11,10 @@ $ git clone https://github.com/mamebb2023/Maze-Project.git
 ```
 * Download the SDL2 MinGW Version from [here](https://wiki.libsdl.org/SDL2/Installation)
 * Copy the 'i686-w64-mingw32' files to a known place
-* Open a terminal on the cloned folder then edit the makefile
-   ** Edit the lib location
-
+* Open a terminal on the cloned folder then edit the Makefile
+   <ul>
+     <li>Edit the lib location</li>
+     <li>Edit the include location</li>
+     <li>Copy 'bin/SDL2.dll' to the cloned repo</li>
+   </ul>
+* Type 'Make' and then the screen should pop up

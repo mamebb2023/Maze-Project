@@ -1,4 +1,4 @@
-<img align="center" src="https://i.ibb.co/VJ01cpF/Screenshot-128.png">
+<img align="center" src="https://i.ibb.co/7jxfdN3/Screenshot-128.png" alt="Screenshot-128" border="0">
 
 # Maze Project
 ---

@@ -1,4 +1,4 @@
-<p align="center">![preview](https://i.ibb.co/RYGFk4X/Screenshot-128.png)</p>
+<img align="center" src="https://i.ibb.co/RYGFk4X/Screenshot-128.png">
 
 # Maze Project
 ---

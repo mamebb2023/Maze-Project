@@ -3,8 +3,8 @@
 <h1 align="center">Maze Project</h1>
 <p align="center">A Maze game made by SDL2</p>
 
-# Usage:
-**Install**
+## Usage:
+### Installation
 * Git clone this repo
 ```bash
 $ git clone https://github.com/mamebb2023/Maze-Project.git
@@ -18,3 +18,11 @@ $ git clone https://github.com/mamebb2023/Maze-Project.git
      <li>Copy 'bin/SDL2.dll' to the cloned repo</li>
    </ul>
 * Type 'Make' and then the screen should pop up
+
+## In-Game
+* **W** - to move forward
+* **S** - to move backward
+* **D** - to move right
+* **L** - to move left
+* **E** - to rotate camera right
+* **Q** - to rotate camera left

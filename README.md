@@ -22,7 +22,6 @@ $ git clone https://github.com/mamebb2023/Maze-Project.git
 ## In-Game
 * **W** - to move forward
 * **S** - to move backward
-* **D** - to move right
-* **L** - to move left
-* **E** - to rotate camera right
-* **Q** - to rotate camera left
+* **D** - to rotate camera right
+* **L** - to rotate camera left
+* You can use mouse to rotate the camera too

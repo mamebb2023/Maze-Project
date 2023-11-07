@@ -3,7 +3,7 @@
 # Maze Project
 ---
 
-Usage:<br>
+Usage:\n
 1 - Git clone this repo<br>
 
 ```bash

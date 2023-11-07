@@ -3,8 +3,6 @@
 <h1 align="center">Maze Project</h1>
 <p align="center">A Maze game made by SDL2</p>
 
----
-
 # Usage:
 **Install**
 * Git clone this repo
@@ -12,4 +10,7 @@
 $ git clone https://github.com/mamebb2023/Maze-Project.git
 ```
 * Download the SDL2 MinGW Version from [here](https://wiki.libsdl.org/SDL2/Installation)
+* Copy the 'i686-w64-mingw32' files to a known place
+* Open a terminal on the cloned folder then edit the makefile
+   ** Edit the lib location
 

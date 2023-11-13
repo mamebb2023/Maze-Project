@@ -3,9 +3,7 @@
 /**
  * shade_walls - Sets the color to paint walls based on orientation
  * @color_ref: Pointer to color data structure
- * @orientation: Side in which the ray is hitting. (1) up/down
- * (2) left/right
- * Return: nothing
+ * @orientation: Side in which the ray is hitting.
  */
 void shade_walls(SDL_Color *color_ref, int orientation)
 {
@@ -22,9 +20,8 @@ void shade_walls(SDL_Color *color_ref, int orientation)
  * textured_sky - Draws sky from a bmp file
  * @sdl: data structure of SDL_Instance
  * @map: data structure of map_t containing 2D map information
- * Return: nothing
  */
-void textured_sky(SDL_Instance *sdl, map_t *map)
+void texture_sky(SDL_Instance *sdl, map_t *map)
 {
 	SDL_Rect sky_dome = {0, 0, SCREEN_WIDTH, (SCREEN_HEIGHT >> 1)};
 	SDL_Surface *surface;
@@ -52,7 +49,6 @@ void textured_sky(SDL_Instance *sdl, map_t *map)
  * @column: current column on screen to draw texture
  * @y_pos: The y coordinate to start at @column
  * @alpha: controls darkening of some pixels for orientation
- * Return: nothing
  */
 void texture_walls(SDL_Instance *sdl, double line_height, int column,
 		int y_pos, uint8_t alpha)
@@ -101,9 +97,6 @@ void texture_walls(SDL_Instance *sdl, double line_height, int column,
 /**
  * render_thread - A thread to handle rendering
  * @td: void pointer to thread_data data structure
- * Description: This was necessary since the blitting process
- * and updating textures
- * takes a while which sometimes slows the program
  *
  * Return: integer for the thread status
  */
@@ -118,7 +111,7 @@ int render_thread(void *td)
 		start = SDL_GetPerformanceCounter();
 
 		/* Perform rendering */
-		textured_sky(data->sdl, data->map);
+		texture_sky(data->sdl, data->map);
 		untextured_floor(data->sdl);
 		raycast(data->sdl, data->player, data->map, data->map_active);
 		weapon_gun(data->sdl, data->map);
@@ -141,8 +134,6 @@ int render_thread(void *td)
  * weapon_gun - Draws gun image, bmp file to screen
  * @sdl: data structure of SDL_Instance
  * @map: data structure of map_t containing 2D map information
- *
- * Return: nothing
  */
 void weapon_gun(SDL_Instance *sdl, map_t *map)
 {

@@ -30,6 +30,7 @@ int count_rows(FILE *fp)
  * @needle: value to look for in array
  * @haystack: Pointer to string
  * @haystack_size: length of the array @haystack
+ *
  * Return: (0) if value not in array otherwise (1) if found in array
  */
 int in_array(char needle, char *haystack, unsigned int haystack_size)
@@ -85,6 +86,7 @@ void validate_line_data(int max_line_count, char *line, FILE *fp,
  * concat - concatenates two strings
  * @s1: destination string
  * @s2: source string to concatenate
+ *
  * Return: New string with @s1 and @s2
  */
 char *concat(const char *s1, const char *s2)
@@ -103,7 +105,6 @@ char *concat(const char *s1, const char *s2)
 /**
  * free_map - frees 2D map of map_t
  * @map: data structure of map_t containing map information
- * Return: nothing
  */
 void free_map(map_t *map)
 {

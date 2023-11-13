@@ -4,7 +4,6 @@
  * draw_player - draws the player as a rectangle to the screen
  * @sdl: data structure of SDL_Instance struct
  * @player: data structure of player struct
- * Return: nothing
  */
 void draw_player(SDL_Instance *sdl, player *player)
 {
@@ -16,7 +15,6 @@ void draw_player(SDL_Instance *sdl, player *player)
  * rotate_player - listens to mouse events and rotates the player
  * @player: datastructure of player, contains player information
  * @mouse: data structure of SDL_Point that stores mouse x, y coordinates
- * Return: nothing
  */
 void rotate_player(player *player, SDL_Point *mouse)
 {
@@ -34,6 +32,7 @@ void rotate_player(player *player, SDL_Point *mouse)
 /**
  * move_player - Moving the player according to the direction facing
  * @player: data structure holding player information
+ *
  * Return: SDL_Point containing displacement distance of movement
  */
 SDL_Point move_player(player *player)
@@ -50,7 +49,6 @@ SDL_Point move_player(player *player)
 /**
  * slide_on_wall - slides the player from the wall on collision
  * @player: pointer to data structure of player holding player information
- * Return: nothing
  */
 void slide_on_wall(player *player)
 {
@@ -83,10 +81,12 @@ void slide_on_wall(player *player)
 		player->locale.y++;
 	}
 }
+
 /**
  * quadrant_of_angle - calculates the quadrant in which a certain angle belongs
  * @angle: The angle to check for it's quadrant
  * @resulting_angle: The angle transform to range between 0-360
+ *
  * Return: quadrant in which angle belongs to. 0 is first quadrant and 3 last
  */
 int quadrant_of_angle(int angle, int *resulting_angle)

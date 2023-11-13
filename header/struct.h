@@ -1,5 +1,5 @@
-#ifndef DT_H
-#define DT_H
+#ifndef STRUCT_H
+#define STRUCT_H
 
 /**
  * struct SDL_Instance - SDL global variables
@@ -73,4 +73,4 @@ typedef struct thread_data
 	int *quit;
 } thread_data;
 
-#endif
+#endif /* STRUCT_H */

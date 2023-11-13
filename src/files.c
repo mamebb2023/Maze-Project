@@ -80,4 +80,3 @@ map_t read_file(FILE *fp)
 
 	return (map);
 }
-

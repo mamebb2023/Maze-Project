@@ -3,7 +3,6 @@
 /**
  * untextured_sky - Draws untextured ceiling to the screen
  * @sdl: instance of sdl data structure
- * Return: nothing
  */
 void untextured_sky(SDL_Instance *sdl)
 {
@@ -16,14 +15,13 @@ void untextured_sky(SDL_Instance *sdl)
 /**
  * untextured_floor - Draws untextured floor to the screen
  * @sdl: instance of sdl data structure
- * Return: nothing
  */
 void untextured_floor(SDL_Instance *sdl)
 {
 	double offset_y = (SCREEN_HEIGHT >> 1);
 	SDL_Rect sky_dome = {0, offset_y, SCREEN_WIDTH, (SCREEN_HEIGHT >> 1)};
 
-	REND_COLOR(sdl->renderer, 101, 101, 101, 255);
+	REND_COLOR(sdl->renderer, 223, 138, 0, 255);
 	SDL_RenderFillRect(sdl->renderer, &sky_dome);
 }
 
@@ -31,7 +29,6 @@ void untextured_floor(SDL_Instance *sdl)
  * player_collision_detection - detects collision of player with walls
  * @player: pointer to data structure of player holding player information
  * @map: pointer to 2 dimension grid
- * Return: nothing
  */
 void player_collision_detection(player *player, map_t *map)
 {
@@ -85,16 +82,9 @@ int check_intersect_orientation(SDL_Rect wall, SDL_Point *pointA,
 
 /**
  * lines_intersect - Checks if two lines segments intersect with each other
- * @line1: Pointer to line structure line1
- * @line2: Pointer to line structure line2
- * @hitp: Ponter to sdl point structure. The point where the two lines meet
- *
- * Description: This is based off an explanation and expanded math presented
- * by Paul Bourke
- * The internal calculations are fixed point with a 14 bit fractional
- * precision for processors without floating point units.
- * For more explanation visit:-
- * http://paulbourke.net/geometry/pointlineplane/
+ * @line1: pointer to line structure line1
+ * @line2: pointer to line structure line2
+ * @hitp: the point where the two lines meet
  *
  * Return: (1) if they intersect, (0) if they do not.
  */
@@ -113,13 +103,6 @@ int lines_intersect(line *line1, line *line2, SDL_Point *hitp)
 	n_b = (line1->p2.x - line1->p1.x) * (line1->p1.y - line2->p1.y) -
 	(line1->p2.y - line1->p1.y) * (line1->p1.x - line2->p1.x);
 
-	/**
-	 * Make sure there is not a division by zero - this also indicates that
-	 * the lines are parallel.
-	 *
-	 * If n_a and n_b were both equal to zero the lines would be on top of each
-	 * other (coincidental).
-	 */
 	if (d == 0)
 		return (0);
 

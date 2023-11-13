@@ -16,20 +16,18 @@
 #include "texture.h"
 #include "raycast.h"
 
-void create_window(char *name, SDL_Instance *sdl);
-void safe_close_sdl(SDL_Instance *sdl);
-void create_renderer(SDL_Instance *sdl);
-void print_sdl_error(void);
+// init.c
+void create_window(char *name, SDL_Instance *);
+void safe_close_sdl(SDL_Instance *);
+void create_renderer(SDL_Instance *);
 
-void game_event_loop(SDL_Instance *sdl, map_t *map);
+// events.c
+void game_event_loop(SDL_Instance *, map_t *);
 void poll_events(int *quit, SDL_Event *e, player *player, SDL_Point *mouse,
 		SDL_bool *map_active);
 
-void draw_2d_map(SDL_Instance *sdl, map_t *map);
-void send_frame(SDL_Instance *sdl);
-
-
-SDL_Point rotate_point(const SDL_Point *point, float cx, float cy, float deg,
-		float ray_size);
+// render.c
+void draw_2d_map(SDL_Instance *, map_t *);
+void send_frame(SDL_Instance *);
 
 #endif

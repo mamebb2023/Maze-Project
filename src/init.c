@@ -1,19 +1,9 @@
 #include "../header/main.h"
 
 /**
- * print_sdl_error - prints any sdl error
- * Return: nothing
- */
-void print_sdl_error(void)
-{
-	printf("SDL Error Occured:%s\n", SDL_GetError());
-}
-
-/**
  * create_window - creates sdl window instance
  * @name: string pointer to be used to window title
  * @sdl: data structure of SDL_Instance
- * Return: (0) if window wasn't created else (1)
  */
 void create_window(char *name, SDL_Instance *sdl)
 {
@@ -21,7 +11,7 @@ void create_window(char *name, SDL_Instance *sdl)
 	SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
 	if (!sdl->window)
 	{
-		print_sdl_error();
+		printf("SDL Error Occured:%s\n", SDL_GetError());
 		safe_close_sdl(sdl);
 		exit(EXIT_FAILURE);
 	}
@@ -30,7 +20,6 @@ void create_window(char *name, SDL_Instance *sdl)
 /**
  * create_renderer - creates sdl renderer instance
  * @sdl: data structure of SDL_Instance
- * Return: nothing
  */
 void create_renderer(SDL_Instance *sdl)
 {
@@ -38,7 +27,7 @@ void create_renderer(SDL_Instance *sdl)
 	SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
 	if (!sdl->renderer)
 	{
-		print_sdl_error();
+		printf("SDL Error Occured:%s\n", SDL_GetError());
 		safe_close_sdl(sdl);
 		exit(EXIT_FAILURE);
 	}
@@ -47,7 +36,6 @@ void create_renderer(SDL_Instance *sdl)
 /**
  * safe_close_sdl - frees and closes sdl
  * @sdl: data structure of SDL_Instance
- * Return: nothing
  */
 void safe_close_sdl(SDL_Instance *sdl)
 {
@@ -63,10 +51,12 @@ void safe_close_sdl(SDL_Instance *sdl)
 		SDL_DestroyTexture(sdl->wall_texture);
 	if (sdl->weapon)
 		SDL_DestroyTexture(sdl->weapon);
+
 	sdl->window = NULL;
 	sdl->renderer = NULL;
 	sdl->skybox = NULL;
 	sdl->wall_surface = NULL;
 	sdl->wall_texture = NULL;
+
 	SDL_Quit();
 }

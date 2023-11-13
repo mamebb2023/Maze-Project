@@ -1,9 +1,7 @@
 #include "../header/main.h"
 
 /**
- * rotate_point - rotates an SDL_Point from an arbitrary center by @deg
- * degrees
- *
+ * rotate_point - rotates an SDL_Point by @deg degrees
  * @point: datastructure of SDL_Point. The cartesean point to rotate
  * @cx: x coordinate of the arbitrary center
  * @cy: y coordinate of the arbitrary center
@@ -18,13 +16,6 @@ SDL_Point rotate_point(const SDL_Point *point, float cx, float cy,
 {
 	SDL_Point new_point = {0, 0};
 
-	/**
-	 * For information of how this works Visit
-	 * https://danceswithcode.net/engineeringnotes/rotations_in
-	 * _2d/rotations_in_2d.html
-	 * Offset our point on y axis with the @ray_size which is sort of the
-	 * length of the ray
-	 */
 	new_point.x = ((point->x - cx) * cos(deg) - (((point->y - ray_size) - cy) *
 				sin(deg))) + cx;
 	new_point.y = ((point->x - cx) * sin(deg) + (((point->y - ray_size) - cy) *
@@ -39,7 +30,6 @@ SDL_Point rotate_point(const SDL_Point *point, float cx, float cy,
  * @player: data structure of player
  * @map: Datastructure of map_t holding map information
  * @map_active: Boolean to indicate map displayed or not
- * Return: nothing
  */
 void raycast(SDL_Instance *sdl, player *player, map_t *map,
 		SDL_bool *map_active)
@@ -85,6 +75,7 @@ void raycast(SDL_Instance *sdl, player *player, map_t *map,
  * @ray_len: pointer to double to be used to store the resulting length of ray
  * @orientation: Side in which the ray is hitting. (1) up/down
  * (2) left/right
+ *
  * Return: SDL Point containing x and y coordinates of the ray
  */
 SDL_Point check_ray_intersections(SDL_Point *center, double ray_rotation_angle,
@@ -128,6 +119,7 @@ map_t map, double *ray_len, int *orientation)
 			}
 		}
 	}
+
 	return (point);
 }
 
@@ -138,9 +130,6 @@ map_t map, double *ray_len, int *orientation)
  * hit the wall
  * @ray_view_angle: The current angle of the ray relative to the view angle
  *
- * Description: Also known as Fishbowl effect which happens because ray-casting
- * implementation mixes polar coordinate and Cartesian coordinate together.
- *
  * Return: The correct length of ray after removing the viewing distortion
  */
 double remove_fish_eye_effect(player *player, double ray_length,
@@ -149,12 +138,6 @@ double remove_fish_eye_effect(player *player, double ray_length,
 	double distorted_distance = ray_length;
 	double correct_distance = 0.0;
 	double deg = (player->view_angle - (FOV / 2.0));
-
-	/**
-	 * The distorted_distance will give a fishey effect.
-	 * To get the correct distance we multiply the distorted
-	 * distance with cosine of angle of casted ray relative to viewing angle
-	 */
 
 	correct_distance = distorted_distance *
 		cos(RADIAN((ray_view_angle - (deg - FOV / 2.0))));
@@ -169,8 +152,6 @@ double remove_fish_eye_effect(player *player, double ray_length,
  * from the y position of center of player)
  * @ray_index: The current column on screen to draw the ray
  * @wall_color: Pointer to SDL_Color data structure with color to paint walls
- *
- * Return: nothing
  */
 void draw_3D_walls(SDL_Instance *sdl, double ray_length, int ray_index,
 	SDL_Color wall_color)
@@ -179,20 +160,6 @@ void draw_3D_walls(SDL_Instance *sdl, double ray_length, int ray_index,
 	double line_height = ceil((SCREEN_HEIGHT / (ray_length * 1.0)) *
 		(d_to_projection_plane >> 6));
 	double draw_start = (SCREEN_HEIGHT / 2.0) - (line_height / 2.0);
-	/**
-	 * double draw_end = draw_start + line_height;
-	 * if (draw_start < 0)
-	 * draw_start = 0;
-	 * if (draw_end >= SCREEN_HEIGHT)
-	 * draw_end = SCREEN_HEIGHT - 1.0;
-	 */
-	/**
-	 * REND_COLOR(sdl->renderer, wall_color.r, wall_color.g, wall_color.b,
-	 * wall_color.a);
-	 */
+
 	texture_walls(sdl, line_height, ray_index, draw_start, wall_color.a);
-	/**
-	 * SDL_RenderDrawLine(sdl->renderer, ray_index, draw_start, ray_index,
-	 * draw_end);
-	 */
 }

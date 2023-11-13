@@ -3,7 +3,6 @@
 /**
  * close_file - closes an opened file
  * @fp: File pointer
- * Return: nothing
  */
 void close_file(FILE *fp)
 {
@@ -14,6 +13,7 @@ void close_file(FILE *fp)
 /**
  * handle_file - calls all file handling functions
  * @filename: string pointer to file name
+ *
  * Return: map_t datastructure of map information
  */
 map_t handle_file(char *filename)
@@ -31,6 +31,7 @@ map_t handle_file(char *filename)
 /**
  * open_file - opens a file
  * @filename: string pointer to file name
+ *
  * Return: File pointer
  */
 FILE *open_file(char *filename)
@@ -50,6 +51,7 @@ FILE *open_file(char *filename)
 /**
  * read_file - reads the content of a file
  * @fp: File pointer
+ *
  * Return: map_t data structure containing map data
  */
 map_t read_file(FILE *fp)

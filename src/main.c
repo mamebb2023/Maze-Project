@@ -4,6 +4,7 @@
  * main - Entry point
  * @argc: Number of arguments passed to the program
  * @argv: Pointer to string arguments passed to the program
+ *
  * Return: (0) on success, exits with failure status on failure
  */
 #ifdef _WIN32

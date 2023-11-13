@@ -1,4 +1,4 @@
-<img align="center" src="https://gcdnb.pbrd.co/images/s3qZoRkSTsS9.png?o=1">
+<img align="center" src="https://github.com/Mamez7878/Mamez7878.github.io/raw/main/maze/assets/img/player.png">
 
 <h1 align="center">Maze Project</h1>
 <p align="center">A Maze game made by SDL2</p>
